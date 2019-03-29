@@ -7,16 +7,16 @@ namespace LendingLibrary.Classes
 {
     public class Library<T> : IEnumerable
     {
-        T[] numbers = new T[5];
+        T[] books = new T[5];
         int count = 0;
 
         public void Add(T number)
         {
-            if( count == numbers.Length )
+            if( count == books.Length )
             {
-                Array.Resize( ref numbers, numbers.Length * 2 );
+                Array.Resize( ref books, books.Length * 2 );
             }
-            numbers[count++] = number;
+            books[count++] = number;
         }
 
         public void Remove(T number)
@@ -24,9 +24,9 @@ namespace LendingLibrary.Classes
             T[] temp = new T[count];
             int counter = 0;
 
-            foreach( T b in numbers )
+            foreach( T b in books)
             {
-                if( !b.Equals(numbers) )
+                if( !b.Equals(books) )
                 {
                     temp[counter] = b;
                     counter++;
@@ -36,11 +36,11 @@ namespace LendingLibrary.Classes
                     break;
                 }
             }
-            numbers = temp;
+            books = temp;
 
             if (counter != count)
             {
-                Array.Resize( ref numbers, ( numbers.Length - 1 ));
+                Array.Resize( ref books, (books.Length - 1 ));
                 count -= 1;
             }
 
@@ -55,7 +55,7 @@ namespace LendingLibrary.Classes
         {
             for( int i = 0 ; i < count ; i++ )
             {
-                yield return numbers[i];
+                yield return books[i];
             }
         }
 
