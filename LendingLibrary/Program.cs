@@ -37,7 +37,7 @@ namespace LendingLibrary
             {
                 if (book.genre == Book.Genres.Fantasy)
                 {
-                    //library.Remove(book);
+                    library.Remove(book);
                     readerA.Add(book);
                     Console.WriteLine("ding");
                 }
@@ -45,6 +45,14 @@ namespace LendingLibrary
             }
 
             foreach (Book book in readerA)
+            {
+                Console.WriteLine($"{book.writer.Name} wrote {book.Title}");
+            }
+
+            Console.WriteLine(".....................");
+
+
+            foreach (Book book in library)
             {
                 Console.WriteLine($"{book.writer.Name} wrote {book.Title}");
             }

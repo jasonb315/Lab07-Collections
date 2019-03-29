@@ -23,6 +23,7 @@ namespace LendingLibrary.Classes
         {
 
             T[] temp = new T[count];
+
             int counter = 0;
 
             foreach( T b in books)
@@ -31,10 +32,6 @@ namespace LendingLibrary.Classes
                 {
                     temp[counter] = b;
                     counter++;
-                }
-                else
-                {
-                    break;
                 }
             }
 
