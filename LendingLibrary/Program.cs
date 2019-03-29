@@ -32,6 +32,9 @@ namespace LendingLibrary
             }
         }
 
+        /// <summary>
+        ///     Borrows books from the library and prints process
+        /// </summary>
         public static void Borrow()
         {
             Library<Book> library = new Library<Book>();

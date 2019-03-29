@@ -10,6 +10,10 @@ namespace LendingLibrary.Classes
         T[] books = new T[10];
         int count = 0;
 
+        /// <summary>
+        ///     Add a book to the library
+        /// </summary>
+        /// <param name="book">Book book</param>
         public void Add(T book)
         {
             if( count == books.Length )
@@ -19,6 +23,10 @@ namespace LendingLibrary.Classes
             books[count++] = book;
         }
 
+        /// <summary>
+        ///     Remove a book from the library
+        /// </summary>
+        /// <param name="book">Book book</param>
         public void Remove(T book)
         {
 
@@ -28,7 +36,7 @@ namespace LendingLibrary.Classes
 
             foreach( T b in books)
             {
-                if( !b.Equals(book) )
+                if( b != null && !b.Equals(book) )
                 {
                     temp[counter] = b;
                     counter++;
@@ -45,11 +53,19 @@ namespace LendingLibrary.Classes
 
         }
 
+        /// <summary>
+        ///     Return the number of books in the library
+        /// </summary>
+        /// <returns>int book count</returns>
         public int Count()
         {
             return count;
         }
 
+        /// <summary>
+        ///     Ienumerator yeilds book by index
+        /// </summary>
+        /// <returns>IEnumerator</returns>
         public IEnumerator<T> GetEnumerator()
         {
             for( int i = 0 ; i < count ; i++ )
